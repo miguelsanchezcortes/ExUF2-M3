@@ -1,5 +1,7 @@
 package llistes;
 
+import java.util.Scanner;
+
 public class Utils {
 
     static String llegirStringPerTeclat() {
@@ -16,6 +18,22 @@ public class Utils {
             }
         }
         return paraula;
+    }
+    public static int llegirEnterPerTeclat() {
+        Scanner lector = new Scanner(System.in);
+        int enterLlegit = 0;
+        boolean llegit = false;
+        while (!llegit) {
+            llegit = lector.hasNextInt();
+            if (llegit) {
+                enterLlegit = lector.nextInt();
+            } else {
+                System.out.println("Això no és un enter");
+                lector.next();
+            }
+        }
+        lector.nextLine();
+        return enterLlegit;
     }
     
 }
